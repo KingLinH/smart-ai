@@ -5,6 +5,16 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/smart-ai
+  datasource:
+    url: jdbc:mysql://localhost:3306/huaxiaotuo?characterEncoding=utf-8&serverTimeZone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 langchain4j:
   open-ai:
