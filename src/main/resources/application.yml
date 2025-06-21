@@ -40,6 +40,12 @@ langchain4j:
       chat-model:
         api-key: ${ALIBL_API_KEY}
         model-name: qwen-max
+      embedding-model:
+        api-key: ${ALIBL_API_KEY}
+        model-name: text-embedding-v4
+      streaming-chat-model:
+        api-key: ${ALIBL_API_KEY}
+        model-name: qwen-plus
 #logging:
 #  level:
 #    root: debug
