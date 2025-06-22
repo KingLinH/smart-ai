@@ -46,6 +46,8 @@ langchain4j:
       streaming-chat-model:
         api-key: ${ALIBL_API_KEY}
         model-name: qwen-plus
-#logging:
-#  level:
-#    root: debug
+
+logging:
+  level:
+    dev:
+      langchain4j: DEBUG

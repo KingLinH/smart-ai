@@ -9,27 +9,22 @@ import reactor.core.publisher.Flux;
 import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
 
 /**
+ * 原小神智能体
+ *
  * @author HJinLin
- * @description
- * @date 2025-06-21 0:51
+ * @date 2025-06-22 0:51
  */
 @AiService(
         wiringMode = EXPLICIT,
-        /*chatModel = "qwenChatModel",*/
         streamingChatModel = "qwenStreamingChatModel",
-        chatMemoryProvider = "huaxiaotuoChatMemoryProvider",
-        tools = {"appointmentTools", "commonTools"},
-        contentRetriever = "huaxiaotuoContentRetrieverPinecone"
+        chatMemoryProvider = "genshinChatMemoryProvider",
+        tools = {"genshinTools", "commonTools"},
+        contentRetriever = "genshinContentRetrieverPinecone"
 )
-public interface HuaxiaotuoAgent {
-
-    /*@SystemMessage(fromResource = "huaxiaotuo-prompt-template.txt")
-    String chat(@MemoryId Long memoryId, @UserMessage String userMessage);*/
-
+public interface GenshinAgent {
     /**
      * 流式输出
      */
-    @SystemMessage(fromResource = "huaxiaotuo-prompt-template.txt")
+    @SystemMessage(fromResource = "genshin-prompt-template.txt")
     Flux<String> chat(@MemoryId Long memoryId, @UserMessage String userMessage);
-
 }
